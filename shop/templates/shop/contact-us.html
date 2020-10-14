@@ -1,0 +1,477 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
+    <title>Juan - Shoes Store HTML Template</title>
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    <!--=== All Plugins CSS ===-->
+    <link href="{% static 'css/plugins.css' %}" rel="stylesheet">
+    <!--=== All Vendor CSS ===-->
+    <link href="{% static 'css/vendor.css' %}" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Modernizer JS -->
+    <script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script>
+
+</head>
+
+    <!-- Start Header Area -->
+    <header class="header-area">
+        <!-- main header start -->
+        <div class="main-header d-none d-lg-block">
+            <!-- header top start -->
+            <div class="header-top theme-bg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="welcome-message">
+                                <p>Не добро пожаловать</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header top end -->
+
+            <!-- header middle area start -->
+            <div class="header-main-area sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+                        <!-- start logo area -->
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="{% url 'shop:index' %}">
+                                    <img src="{% static 'img/logo/logo1.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- start logo area -->
+
+                        <!-- main menu area start -->
+                        <div class="col-lg-8 position-static">
+                            <div class="main-menu-area">
+                                <div class="main-menu">
+                                    <!-- main menu navbar start -->
+                                    <nav class="desktop-menu">
+                                        <ul>
+                                            <li class="active"><a href="{% url 'shop:index' %}">Home <i class="fa fa-angle-down"></i></a>
+</li>
+                                            <li><a href="{% url 'shop:shop' %}">shop <i class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="{% url 'shop:product_detail' %}">products details <i class="fa fa-angle-right"></i></a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="{% url 'shop:product_detail' %}">product details</a></li>
+                                                            <li><a href="{% url 'shop:affiliate' %}">product details affiliate</a></li>
+                                                            <li><a href="{% url 'shop:variable' %}">product details variable</a></li>
+                                                            <li><a href="{% url 'shop:group' %}">product details group</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="contact-us.html">Contact us</a></li>
+                                        </ul>
+                                    </nav>
+                                    <!-- main menu navbar end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- main menu area end -->
+
+                        <!-- mini cart area start -->
+                        <div class="col-lg-2">
+                            <div class="header-configure-wrapper">
+                                <div class="header-configure-area">
+                                    <ul class="nav justify-content-end">
+                                        <li>
+                                            <form action="{% url 'shop:search_results' %}" method="get">
+                                                <input name='q' type="text" value="" placeholder="Поиск" style="width: 70px;">
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'cart:cart_detail' %}" class="minicart-btn">
+                                                <i class="ion-bag"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- mini cart area end -->
+                    </div>
+                </div>
+            </div>
+            <!-- header middle area end -->
+        </div>
+        <!-- main header start -->
+
+        <!-- mobile header start -->
+        <div class="mobile-header d-lg-none d-md-block sticky">
+            <!--mobile header top start -->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="mobile-main-header">
+                            <div class="mobile-logo">
+                                <a href="{% url 'shop:index' %}">
+                                    <img src="{% static 'img/logo/logo.png' %}" alt="Brand Logo">
+                                </a>
+                            </div>
+                            <div class="mobile-menu-toggler">
+                                <div class="mini-cart-wrap">
+                                    <a href="cart.html">
+                                        <i class="ion-bag"></i>
+                                    </a>
+                                </div>
+                                <div class="mobile-menu-btn">
+                                    <div class="off-canvas-btn">
+                                        <i class="ion-navicon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile header top start -->
+        </div>
+        <!-- mobile header end -->
+    </header>
+    <!-- end Header Area -->
+
+    <!-- off-canvas menu start -->
+    <aside class="off-canvas-wrapper">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+            <div class="btn-close-off-canvas">
+                <i class="ion-android-close"></i>
+            </div>
+
+            <div class="off-canvas-inner">
+                <!-- search box start -->
+                <div class="search-box-offcanvas">
+                    <form>
+                        <input type="text" placeholder="Search Here...">
+                        <button class="search-btn"><i class="ion-ios-search-strong"></i></button>
+                    </form>
+                </div>
+                <!-- search box end -->
+
+                <!-- mobile menu start -->
+                <div class="mobile-navigation">
+                    <!-- mobile menu navigation start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children"><a href="{% url 'shop:index' %}">Home</a></li>
+                            <li class="menu-item-has-children "><a href="{% url 'shop:shop' %}">shop</a>
+                                <ul class="dropdown">
+                                    <li class="menu-item-has-children"><a href="{% url 'shop:product_detail' %}">products details</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'shop:product_detail' %}">product details</a></li>
+                                            <li><a href="p{% url 'shop:affiliate' %}">product details affiliate</a></li>
+                                            <li><a href="{% url 'shop:variable' %}">product details variable</a></li>
+                                            <li><a href="{% url 'shop:group' %}">product details group</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><a href="contact-us.html">Contact us</a></li>
+                        </ul>
+                    </nav>
+                    <!-- mobile menu navigation end -->
+                </div>
+                <!-- mobile menu end -->
+
+                <!-- offcanvas widget area start -->
+                <div class="offcanvas-widget-area">
+                    <div class="off-canvas-contact-widget">
+                        <ul>
+                            <li><i class="fa fa-mobile"></i>
+                                <a href="contact-us.html#">0123456789</a>
+                            </li>
+                            <li><i class="fa fa-envelope-o"></i>
+                                <a href="contact-us.html#">info@yourdomain.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="off-canvas-social-widget">
+                        <a href="contact-us.html#"><i class="fa fa-facebook"></i></a>
+                        <a href="contact-us.html#"><i class="fa fa-twitter"></i></a>
+                        <a href="contact-us.html#"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="contact-us.html#"><i class="fa fa-linkedin"></i></a>
+                        <a href="contact-us.html#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <!-- offcanvas widget area end -->
+            </div>
+        </div>
+    </aside>
+    <!-- off-canvas menu end -->
+
+    <!-- main wrapper start -->
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area bg-img" data-bg="{% static 'img/banner/breadcrumb-banner.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap text-center">
+                            <nav aria-label="breadcrumb">
+                                <h1 class="breadcrumb-title">Contact Us</h1>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{% url 'shop:index' %}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- contact wrapper area start -->
+        <div class="contact-us-area">
+            <div class="container">
+              <div class="breadcrumb-area">
+                <div class="container">
+                  <div class="breadcrumb">
+                    <a href="{% url 'shop:index' %}" title="Return to Home">
+                      <i class="icon-home"></i>
+                    </a>
+                    <span class="navigation-pipe"></span>
+                    <span class="navigation-page">
+                      Contact us 
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  
+                  <form action="{% url 'shop:applications' %}" method="POST" >
+                      <div class="row">
+                        <div class="col-xs-12 col-md-3">
+                          {% csrf_token %}
+                          <div class="form-group">
+                            <label>Имя</label>
+                            <div class="shop-select">
+                              <input name="name" id="name">
+                            </div>                      
+                          </div>
+                          <div class="form-group">
+                            <label>Электронная почта</label>
+                            <div class="shop-select">
+                              <input name="mail" id="email">
+                            </div>                      
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <div class="form-group">
+                              <label for="comment">Сообщение</label>
+                              <div class="shop-select">
+                              <textarea name="comment" id="message" style="margin-top: 0px; margin-bottom: 0px; height: 114px;"></textarea>
+                              </div>                      
+                            </div>                    
+                        </div>
+      
+                      </div>
+                      <!-- <input type="submit"> -->
+                      <div class="submit">
+                        <button class="button btn btn-default button-medium" type="submit" style="margin: 20px;">
+                          <span>
+                            send
+                            <i class="icon-chevron-right right"></i>
+                          </span>
+                        </button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- contact wrapper area end -->
+    </main>
+    <!-- main wrapper end -->
+
+    <!-- Start Footer Area Wrapper -->
+    <footer class="footer-wrapper">
+        <!-- footer main area start -->
+        <div class="footer-widget-area section-padding">
+            <div class="container">
+                <div class="row mtn-40">
+                    <!-- footer widget item start -->
+                    <div class="col-xl-5 col-lg-3 col-md-6">
+                        <div class="widget-item mt-40">
+                            <h5 class="widget-title">My Account</h5>
+                            <div class="widget-body">
+                                <ul class="location-wrap">
+                                    <li><i class="ion-ios-location-outline"></i>Абдрахманова 105/3, Бишкек</li>
+                                    <li><i class="ion-ios-email-outline"></i>Mail Us: <a href="mailto:bolotbekovtaalay@gmail.com">bolotbekovtaalay@gmail.com</a></li>
+                                    <li><i class="ion-ios-telephone-outline"></i>Phone: <a href="https://demo.hasthemes.com/juan-preview-v1/juan/+996708955999">+996 708 955 999</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- footer widget item end -->
+                    <!-- footer widget item start -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="widget-item mt-40">
+                            <h5 class="widget-title">Information</h5>
+                            <div class="widget-body">
+                                <ul class="useful-link">
+                                    <li><a href="{% url 'shop:index' %}">Home</a></li>
+                                    <li><a href="{% url 'shop:contact' %}">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- footer widget item end -->
+                </div>
+            </div>
+        </div>
+        <!-- footer main area end -->
+
+        <!-- footer bottom area start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 order-2 order-md-1">
+                        <div class="copyright-text text-center text-md-left">
+                            <p>Copyright 2019 <a href="{% url 'shop:index' %}">Juan</a>. All Rights Reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2">
+                        <div class="footer-social-link text-center text-md-right">
+                            <a href="contact-us.html#"><i class="fa fa-facebook"></i></a>
+                            <a href="contact-us.html#"><i class="fa fa-twitter"></i></a>
+                            <a href="contact-us.html#"><i class="fa fa-linkedin"></i></a>
+                            <a href="contact-us.html#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer bottom area end -->
+    </footer>
+    <!-- End Footer Area Wrapper -->
+
+    <!-- offcanvas search form start -->
+    <div class="offcanvas-search-wrapper">
+        <div class="offcanvas-search-inner">
+            <div class="offcanvas-close">
+                <i class="ion-android-close"></i>
+            </div>
+            <div class="container">
+                <div class="offcanvas-search-box">
+                    <form class="d-flex bdr-bottom w-100">
+                        <input type="text" placeholder="Search entire storage here...">
+                        <button class="search-btn"><i class="ion-ios-search-strong"></i>search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas search form end -->
+
+    <!-- offcanvas mini cart start -->
+    <div class="offcanvas-minicart-wrapper">
+        <div class="minicart-inner">
+            <div class="offcanvas-overlay"></div>
+            <div class="minicart-inner-content">
+                <div class="minicart-close">
+                    <i class="ion-android-close"></i>
+                </div>
+                <div class="minicart-content-box">
+                    <div class="minicart-item-wrapper">
+                        <ul>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="{% static 'img/cart/cart-1.jpg' %}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">Flowers bouquet pink for all flower lovers</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">$100.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="ion-android-close"></i></button>
+                            </li>
+                            <li class="minicart-item">
+                                <div class="minicart-thumb">
+                                    <a href="product-details.html">
+                                        <img src="{% static 'img/cart/cart-2.jpg' %}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="minicart-content">
+                                    <h3 class="product-name">
+                                        <a href="product-details.html">Jasmine flowers white for all flower lovers</a>
+                                    </h3>
+                                    <p>
+                                        <span class="cart-quantity">1 <strong>&times;</strong></span>
+                                        <span class="cart-price">$80.00</span>
+                                    </p>
+                                </div>
+                                <button class="minicart-remove"><i class="ion-android-close"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-pricing-box">
+                        <ul>
+                            <li>
+                                <span>sub-total</span>
+                                <span><strong>$300.00</strong></span>
+                            </li>
+                            <li>
+                                <span>Eco Tax (-2.00)</span>
+                                <span><strong>$10.00</strong></span>
+                            </li>
+                            <li>
+                                <span>VAT (20%)</span>
+                                <span><strong>$60.00</strong></span>
+                            </li>
+                            <li class="total">
+                                <span>total</span>
+                                <span><strong>$370.00</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="minicart-button">
+                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
+                        <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas mini cart end -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <!--=======================Javascript============================-->
+    <!--=== All Vendor Js ===-->
+    <script src="{% static '/js/vendor.js' %}"></script>
+    <!--=== All Plugins Js ===-->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!--=== Active Js ===-->
+    <script src="{% static 'js/active.js' %}"></script>
+</body>
+    
+</html>
